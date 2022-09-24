@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Text to QR image</title>
+</head>
+<body>
+<form method="post" action="{% url 'qr_code'%}">
+    {% csrf_token %}
+    <textarea rows="6" name="data" id="data" placeholder="Enter some text" 
+cols="80" maxlength="1000"></textarea><be>
+    <input type="submit" name="action" value="Generate QR Code">
+</form>
+{% if qr_filename %}
+    <img src='/media/{{qr_filename}}' >
+{% endif %}
+</body>
+</html>

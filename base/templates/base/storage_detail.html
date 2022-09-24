@@ -1,0 +1,9 @@
+{%extends 'base/main.html'%}
+{% block content %}
+{% load qr_code %}
+
+<h1>Bank Name: {{bank.bank_name}}</h1>
+<h3>Account Number: {{bank.account_number}}</h3>
+<p><a href="{%url 'banks' %}"> Go Back</a> </p>
+{% qr_from_text "{{bank.bank_name, bank.account_number}}" size="M" %}
+{% endblock content%}

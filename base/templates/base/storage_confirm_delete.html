@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<a href="{% url 'banks'%}"> I've changed my mind!!</a>
+<form method="POST" action="">
+    {% csrf_token %}
+    <h3>
+        Are you sure about this? All Information will be lost
+    </h3>
+    <input type="submit" value="Confirm"/>
+</form>
+{% endblock content%}

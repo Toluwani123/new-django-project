@@ -1,0 +1,21 @@
+{% extends 'base/main.html'%}
+{% block content %}
+<h1>
+    Create Account
+</h1>
+
+<form method="POST", action="">
+    {% csrf_token %}
+    <label>{{form.username.label}}</label>
+    {{form.username}}
+
+    <label>{{form.password1.label}}</label>
+    {{form.password1}}
+
+    <label>{{form.password2.label}}</label>
+    {{form.password2}}
+    <input type="submit" value="Create">
+</form>
+
+<p> Already have an account? <a href="{% url 'login' %}">Login Here</a></p>
+{% endblock content %}
